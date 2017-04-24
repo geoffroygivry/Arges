@@ -16,7 +16,9 @@ console.log("initialization....")
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 900, height: 600})
+  mainWindow = new BrowserWindow({width: 900, height: 600});
+  mainWindow.setMenu(null);
+  mainWindow.webContents.openDevTools({detach:true});
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
