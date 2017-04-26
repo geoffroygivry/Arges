@@ -1,2 +1,2 @@
 const {webFrame} = require('electron')
-webFrame.setZoomLevel(-2);
+webFrame.setZoomLevel(0);

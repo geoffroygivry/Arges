@@ -1160,3 +1160,9 @@ var App = function () {
 		}
   };
 }();
+
+$('#myTable').on('click', '.clickable-row', function(event) {
+  $(this).addClass('selected').siblings().removeClass('selected');
+    var show = $(this).find(".show strong").html();
+    console.log(show);
+});
