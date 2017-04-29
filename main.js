@@ -14,8 +14,8 @@ const url = require('url')
 let mainWindow
 console.log("initialization....")
 
-process.env.show = 'rby';
-console.log("show is:"  + process.env.show);
+
+
 
 function createWindow () {
   // Create the browser window.

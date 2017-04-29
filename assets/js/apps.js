@@ -1162,7 +1162,66 @@ var App = function () {
 }();
 
 $('#myTable').on('click', '.clickable-row', function(event) {
-  $(this).addClass('selected').siblings().removeClass('selected');
-    var show = $(this).find(".show strong").html();
-    console.log(show);
+  $(this).toggleClass('selected').siblings().removeClass('selected');
+    if ($(".selected")){
+        var show = $(this).find(".show strong").html();
+        var shot = $(this).find(".shot").html();
+        process.env.job = show;
+        process.env.show = show;
+        process.env.shot = shot;
+        process.env.task = 'comp';
+    } else {
+        console.log("Nope.... sorry clufery")
+    }
+
 });
+
+const btn_nuke = document.getElementById('nuke')
+
+btn_nuke.addEventListener('click', function (event) {
+
+    var child = require('child_process').execFile;
+    var executablePath = "C:\\Program Files\\Nuke9.0v7\\Nuke9.0.exe";
+
+    child(executablePath, function(err, data) {
+        if(err){
+           console.error(err);
+           return;
+        }
+
+        console.log(data.toString());
+    });
+    
+    
+});
+
+var exec = require('child_process').exec;
+exec('C:\Dropbox\CyclopsVFX\Apps\WinBash\Env.cmd');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
